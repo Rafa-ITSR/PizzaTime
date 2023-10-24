@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-image {
+  background-image: url('../public/imagenes/fondo.jpg');
+  background-size: auto;
+  background-position: center;
+  height: 100vh; /* Establece la altura para que cubra toda la pantalla */
+}

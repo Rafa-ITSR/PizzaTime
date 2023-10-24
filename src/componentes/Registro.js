@@ -42,29 +42,34 @@ const Registro = () => {
         </div>
 
 
-        <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-           <div className="carousel-inner">
-           <div className="carousel-item active">
-            <img src="./imagenes/carne.jpg" className="d-block w-100" alt="Pizza de carnes frías"/>
+        <div className="container text-center mt-5">
+  <div className="row">
+    <div className="col-md-8 mx-auto">
+      <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src="./imagenes/carne.jpg" className="d-block mx-auto img-fluid" alt="Pizza de carnes frías" style={{ maxWidth: '100%', maxHeight: '300px' }} />
           </div>
-             <div className="carousel-item">
-           <img src="./imagenes/mexa.jpg" className="d-block w-100" alt="Pizza Mexicana"/>
+          <div className="carousel-item">
+            <img src="./imagenes/mexa.jpg" className="d-block mx-auto img-fluid" alt="Pizza Mexicana" style={{ maxWidth: '100%', maxHeight: '300px' }} />
           </div>
-            <div className="carousel-item">
-             <img src="./imagenes/chori.jpg" className="d-block w-100" alt="Pizza de chorizo"/>
-              </div>
-              </div>
-                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span className="visually-hidden">Previous</span>
-                  </button>
-                   <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                <span className="visually-hidden">Next</span>
-                  </button>
-                 </div>
+          <div className="carousel-item">
+            <img src="./imagenes/chori.jpg" className="d-block mx-auto img-fluid" alt="Pizza de chorizo" style={{ maxWidth: '100%', maxHeight: '300px' }} />
+          </div>
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
-
+    </div>
+  </div>
+</div>
+      </div>
 
     );
     

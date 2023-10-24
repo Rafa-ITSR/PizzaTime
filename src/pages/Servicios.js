@@ -1,27 +1,42 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
-import { Link,  } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Personalizar() {
-  const [tamaño, setTamaño] = useState('');
-  const [aderezoSeleccionado, setAderezoSeleccionado] = useState('');
-  const [ingredienteSeleccionado, setIngredienteSeleccionado] = useState('');
-  
-  
+  const [newTamaño, setTamaño] = useState('');
+  const [newAderezo, setAderezoSeleccionado] = useState('');
+  const [newIngrediente, setIngredienteSeleccionado] = useState('');
+  const navigate = useNavigate(); // Usamos useNavigate en lugar de useHistory
 
   const handleTamañoChange = (event) => {
-    setTamaño(event.target.value);
+    const newTamaño = event.target.value;
+    setTamaño(newTamaño);
   };
 
   const handleAderezoChange = (event) => {
-    setAderezoSeleccionado(event.target.value);
+    const newAderezo = event.target.value;
+    setAderezoSeleccionado(newAderezo);
   };
 
   const handleIngredienteChange = (event) => {
-    setIngredienteSeleccionado(event.target.value);
+    const newIngrediente = event.target.value;
+    setIngredienteSeleccionado(newIngrediente);
   };
 
+  const handleAceptarClick = () => {
+    // Usamos navigate para redirigir a la página de resumenpedido
+    navigate('/resumenpedido', {
+      state: {
+        newTamaño,
+        newAderezo,
+        newIngrediente,
+      },
+    });
+  };
+
+
   return (
+    <div className="bg-image">
     <div className="container mt-5">
       <div className="row">
         <div className="col">
@@ -36,10 +51,10 @@ function Personalizar() {
             <select
               className="form-control"
               id="tamañoDropdown"
-              value={tamaño}
+              value={newTamaño}
               onChange={handleTamañoChange}
             >
-              <option value="">Selecciona el tamaño</option>
+              
               <option value="Chica">Chica</option>
               <option value="Mediana">Mediana</option>
               <option value="Grande">Grande</option>
@@ -57,10 +72,10 @@ function Personalizar() {
             <select
               className="form-control"
               id="aderezoDropdown"
-              value={aderezoSeleccionado}
+              value={newAderezo}
               onChange={handleAderezoChange}
             >
-              <option value="">Selecciona el aderezo</option>
+              
               <option value="Cátsup">Cátsup</option>
               <option value="Chimichurri">Chimichurri</option>
               <option value="Salsa Inglesa">Salsa Inglesa</option>
@@ -76,10 +91,10 @@ function Personalizar() {
             <select
               className="form-control"
               id="ingredienteDropdown"
-              value={ingredienteSeleccionado}
+              value={newIngrediente}
               onChange={handleIngredienteChange}
             >
-              <option value="">Selecciona el ingrediente</option>
+              
               <option value="Hawaiana">Hawaiana</option>
               <option value="Peperoni">Peperoni</option>
               <option value="Mexicana">Mexicana</option>
@@ -100,20 +115,12 @@ function Personalizar() {
           </button>
         </div>
         <div className="col">
-          <button className="btn btn-success">
-            <Link to={{ 
-      pathname: "/resumenpedido",
-      state: {
-        tamaño,
-        aderezoSeleccionado,
-        ingredienteSeleccionado,
-      },
-    }}  className="btn btn-primary mb-3">
-              Aceptar
-            </Link>
-          </button>
+        <button className="btn btn-success" onClick={handleAceptarClick}>
+          Aceptar
+        </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

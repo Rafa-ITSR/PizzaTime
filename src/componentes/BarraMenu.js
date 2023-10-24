@@ -1,13 +1,10 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function Inicio() {
+function BarraMenu() {
     return (
-   
- 
-<div className="bg-success">
-   <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">Pizzatime</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,50 +36,12 @@ function Inicio() {
           </div>
         </div>
     </nav>
-     
-    
 
-    
-    <div className="row mt-4">
-          <div className="col text-center">
-            <button className="btn btn-primary btn-lg">
-              <Link to="/personalizar" className=" btn btn-primary mb-3">Personalizar pizza</Link>
-              </button>
-            <button className="btn btn-secondary btn-lg"> 
-            <Link to="/ofertas" className="text-white">Ofertas</Link></button>
-          </div>
-     </div>   
-    
-     <div className="row mt-4">
-        <div className="position-relative">
-          <div  className="position-absolute top-0 start-0 translate-middle-y">
-            <img  src={'./imagenes/imagen1.jpg'} className="img-fluid" alt="Pizza Abajo Izquierda" width="400px"/>
-          </div>
-        </div>
-
-        <div className="position-relative">
-          <div className="position-absolute top-0 end-0 translate-middle-y">
-            <img  src={'./imagenes/imagen2.jpg'} className="img-fluid" alt="Pizza Abajo Derecha" width="250px"/>
-          </div>
-        </div>
       
       
-      <br/>
-      <br/>
-      <br/>
-        
-        <div className="position-relative">
-          <div className="position-absolute top-100 start-50 translate-middle-x">
-            <img  src={'./imagenes/imagen4.jpg'} className="img-fluid" alt="Pizza Abajo Centro"  width="300px"/>
-          </div>
-        </div>
-        </div>
+      
+        );
+    }
     
-        </div>
-  
-     
-    );
-
-  }
-  
-  export default Inicio;
+    export default BarraMenu;
+    
